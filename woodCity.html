@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body {
+            height:100%;
+        }
+        #main{
+            width:100%;
+            height:100%;
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main"></div>
+<script src="./lib/jquery.min.js"></script>
+<script src="./lib/echarts.min.js"></script>
+<script src="./lib/echarts-gl.min.js"></script>
+<script>
+
+
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+
+    $.getJSON('./json/woodCity.json', function (buildingsGeoJSON) {
+
+        echarts.registerMap('buildings', buildingsGeoJSON);
+
+        var regions = buildingsGeoJSON.features.map(function (feature) {
+            return {
+                name: feature.properties.name,
+                value: Math.max(Math.sqrt(feature.properties.height), 0.1),
+                height: Math.max(Math.sqrt(feature.properties.height), 0.1)
+            };
+        });
+
+
+        myChart.setOption({
+            series: [{
+                type: 'map3D',
+                map: 'buildings',
+                shading: 'realistic',
+                realisticMaterial: {
+                    roughness: 0.6,
+                    textureTiling: 20,
+                    baseTexture: './images/data-1491896059428-B1QbPbq6e.jpg'
+                },
+                postEffect: {
+                    enable: true,
+                    bloom: {
+                        enable: false
+                    },
+                    SSAO: {
+                        enable: true,
+                        quality: 'medium',
+                        radius: 10,
+                        intensity: 1.2
+                    },
+                    depthOfField: {
+                        enable: false,
+                        focalRange: 5,
+                        fstop: 1,
+                        blurRadius: 6
+                    }
+                },
+                groundPlane: {
+                    show: true,
+                    color: '#333'
+                },
+                light: {
+                    main: {
+                        intensity: 6,
+                        shadow: true,
+                        shadowQuality: 'high',
+                        alpha: 30
+                    },
+                    ambient: {
+                        intensity: 0
+                    },
+                    ambientCubemap: {
+                        texture: './images/data-1491896094618-H1DmP-5px.hdr',
+                        exposure: 2,
+                        diffuseIntensity: 1,
+                        specularIntensity: 1
+                    }
+                },
+                viewControl: {
+                    minBeta: -360,
+                    maxBeta: 360
+                },
+
+                itemStyle: {
+                    areaColor: '#666'
+                },
+
+                label: {
+                    textStyle: {
+                        color: 'white'
+                    }
+                },
+
+                silent: true,
+
+                instancing: true,
+
+                boxWidth: 200,
+                boxHeight: 1,
+
+                data: regions
+            }]
+        });
+
+    });
+
+</script>
+</body>
+</html>
