@@ -24,8 +24,8 @@
 <body>
 
 <div id="main"></div>
-<script src="./lib/echarts.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
 <script>
     var myChart = echarts.init(document.getElementById('main'));
     var sin = Math.sin;
@@ -140,7 +140,7 @@
                     intensity: 0
                 },
                 ambientCubemap: {
-                    texture: './images/data-1491896094618-H1DmP-5px.hdr',
+                    texture: '../images/data-1491896094618-H1DmP-5px.hdr',
                     exposure: 0,
                     diffuseIntensity: 1,
                     specularIntensity: 0.5
@@ -159,7 +159,7 @@
                 show: false
             },
             realisticMaterial: {
-                baseTexture: './images/data-1494250104909-SkZtfeAyZ.jpg',
+                baseTexture: '../images/data-1494250104909-SkZtfeAyZ.jpg',
                 roughness: 0.7,
                 metalness: 0,
                 textureTiling: [200, 20]

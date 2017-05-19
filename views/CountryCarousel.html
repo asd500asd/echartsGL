@@ -24,11 +24,11 @@
 <body>
 
 <div id="main"></div>
-<script src="./lib/jquery.min.js"></script>
-<script src="./lib/dat.gui.js"></script>
-<script src="./lib/echarts.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/dat.gui.js"></script>
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
 <script>
     var myChart = echarts.init(document.getElementById('main'));
     var canvas = document.createElement('canvas');
@@ -66,7 +66,7 @@
     var option = {
         globe: {
             baseTexture: mapChart,
-            heightTexture: './images/data-1491889019097-rJQYikcpl.jpg',
+            heightTexture: '../images/data-1491889019097-rJQYikcpl.jpg',
 
             displacementScale: 0.1,
 
@@ -91,7 +91,7 @@
                     shadow: true
                 },
                 ambientCubemap: {
-                    texture: './images/data-1491837984109-r1u7NmY6e.hdr',
+                    texture: '../images/data-1491837984109-r1u7NmY6e.hdr',
                     exposure: 1,
                     diffuseIntensity: 0.2
                 }

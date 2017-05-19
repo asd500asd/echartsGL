@@ -24,8 +24,8 @@
 <body>
 
 <div id="main"></div>
-<script src="./lib/echarts.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
 <script>
     var UPDATE_DURATION = 100;
 
@@ -34,7 +34,7 @@
     var audioContext = new AudioContext();
 
     var oReq = new XMLHttpRequest();
-    oReq.open('GET', './sources/data-1493350085456-S1p6LNlyZ.mp3', true);
+    oReq.open('GET', '../sources/data-1493350085456-S1p6LNlyZ.mp3', true);
 //    oReq.open('GET', './sources/12.mp3', true);
 //    oReq.open('GET', './sources/3.mp3', true);
     oReq.responseType = 'arraybuffer';
@@ -160,7 +160,7 @@
                     quality: 'high'
                 },
                 ambientCubemap: {
-                    texture: './images/data-1491896094618-H1DmP-5px.hdr',
+                    texture: '../images/data-1491896094618-H1DmP-5px.hdr',
                     exposure: 0,
                     diffuseIntensity: 0.2
                 }

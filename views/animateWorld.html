@@ -24,12 +24,12 @@
 <body>
 
 <div id="main"></div>
-<script src="./lib/d3-contour.js"></script>
-<script src="./lib/d3-geo.js"></script>
-<script src="./lib/d3-timer.js"></script>
-<script src="./lib/dat.gui.js"></script>
-<script src="./lib/echarts.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
+<script src="../lib/d3-contour.js"></script>
+<script src="../lib/d3-geo.js"></script>
+<script src="../lib/d3-timer.js"></script>
+<script src="../lib/dat.gui.js"></script>
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
 <script>
     var myChart = echarts.init(document.getElementById('main'));
     var config = {
@@ -51,7 +51,7 @@
 
     var gui = new dat.GUI();
 
-    image('./images/data-1491837512042-rJlLfXYax.jpg').then(function(image) {
+    image('../images/data-1491837512042-rJlLfXYax.jpg').then(function(image) {
         var m = image.height,
             n = image.width,
             values = new Array(n * m),
@@ -146,9 +146,9 @@
             backgroundColor: '#000',
             globe: {
 
-                environment: './images/data-1491837999815-H1_44Qtal.jpg',
+                environment: '../images/data-1491837999815-H1_44Qtal.jpg',
 
-                heightTexture: './images/data-1491837512042-rJlLfXYax.jpg',
+                heightTexture: '../images/data-1491837512042-rJlLfXYax.jpg',
 
                 displacementScale: 0.05,
                 displacementQuality: 'high',
@@ -176,7 +176,7 @@
                         shadow: false
                     },
                     ambientCubemap: {
-                        texture: './images/data-1491837984109-r1u7NmY6e.hdr',
+                        texture: '../images/data-1491837984109-r1u7NmY6e.hdr',
                         exposure: 1,
                         diffuseIntensity: 0.5,
                         specularIntensity: 2

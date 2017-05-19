@@ -24,9 +24,9 @@
 <body>
 
 <div id="main"></div>
-<script src="./lib/jquery.min.js"></script>
-<script src="./lib/echarts.min.js"></script>
-<script src="./lib/echarts-gl.min.js"></script>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/echarts-gl.min.js"></script>
 <script>
 
 
@@ -34,7 +34,7 @@
 
 
 
-    $.getJSON('./json/woodCity.json', function (buildingsGeoJSON) {
+    $.getJSON('../json/woodCity.json', function (buildingsGeoJSON) {
 
         echarts.registerMap('buildings', buildingsGeoJSON);
 
@@ -55,7 +55,7 @@
                 realisticMaterial: {
                     roughness: 0.6,
                     textureTiling: 20,
-                    baseTexture: './images/data-1491896059428-B1QbPbq6e.jpg'
+                    baseTexture: '../images/data-1491896059428-B1QbPbq6e.jpg'
                 },
                 postEffect: {
                     enable: true,
@@ -90,7 +90,7 @@
                         intensity: 0
                     },
                     ambientCubemap: {
-                        texture: './images/data-1491896094618-H1DmP-5px.hdr',
+                        texture: '../images/data-1491896094618-H1DmP-5px.hdr',
                         exposure: 2,
                         diffuseIntensity: 1,
                         specularIntensity: 1

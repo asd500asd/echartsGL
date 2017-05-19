@@ -1,0 +1,10 @@
+.demo-index li {
+    text-align: center;
+    margin: 15px;
+}
+.demo-index li a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    color: #d9534f;
+}
